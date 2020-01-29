@@ -1,6 +1,16 @@
 @import "~bootstrap/scss/bootstrap";
 @import "vars";
 
+a {
+    color          : $link-color;
+    text-decoration: none;
+
+    &:hover {
+        color          : $primary-color;
+        text-decoration: none;
+    }
+}
+
 body {
     background-color: ffffff;
 }
@@ -29,4 +39,26 @@ h1 {
 .custom-form label {
     display: flex;
     margin : 15px 0;
+}
+
+//icon
+.user-icon {
+    align-items    : center;
+    color          : $primary-color;
+    display        : flex;
+    justify-content: center;
+    height         : 40px;
+    width          : 40px;
+}
+
+//navbar
+.brand {
+    color: $primary-color !important;
+}
+
+.profile-circle {
+    background-color: $light-grey;
+    border-radius   : 20px;
+    height          : 40px;
+    width           : 40px;
 }
