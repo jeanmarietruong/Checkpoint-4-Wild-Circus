@@ -12,10 +12,19 @@
 				<a class="nav-link" href="#">Pricing</a>
 			</li>
 			<li class="nav-item mx-4">
-				<div class="profile-circle">
-					<div class="user-icon">
-						<i class="fas fa-user fa-lg"></i>
+				<div class="row">
+					<div class="profile-circle">
+						<div class="user-icon">
+							<i class="fas fa-user fa-lg"></i>
+						</div>
 					</div>
+					{% if is_granted('ROLE_ADMIN') %}
+						<div class="edit-icon">
+							<a class="nav-link" href="/admin">
+								<i class="fas fa-pen"></i>
+							</a>
+						</div>
+					{% endif %}
 				</div>
 			</li>
 			<li class="nav-item">
