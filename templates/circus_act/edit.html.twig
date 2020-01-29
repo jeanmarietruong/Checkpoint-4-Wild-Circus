@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit CircusAct{% endblock %}
+
+{% block body %}
+    <h1>Edit CircusAct</h1>
+
+    {{ include('circus_act/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('circus_act_index') }}">back to list</a>
+
+    {{ include('circus_act/_delete_form.html.twig') }}
+{% endblock %}

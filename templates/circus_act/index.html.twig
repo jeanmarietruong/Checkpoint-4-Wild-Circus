@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CircusAct index
+{% endblock %}
+
+{% block body %}
+	<div class="container my-5">
+		{# title #}
+		<h1>Circus Act</h1>
+		<div class="my-3">
+			{% if is_granted('ROLE_ADMIN') %}
+				<a href="{{ path('circus_act_new') }}">
+					<div class="row d-flex justify-content-start">
+						<i class="fas fa-plus fa-lg"></i>
+					</div>
+				</a>
+			{% endif %}
+		</div>
+		{# circus act #}
+		<div class="row">
+			{% for circus_act in circus_acts %}
+				<div class="col">
+					<div class="card">
+						<div class="card-header">
+							{{ circus_act.name }}
+						</div>
+						<div class="card-body">
+							<p class="card-text">{{ circus_act.description }}.</p>
+							<div class="row d-flex justify-content-center">
+								<a href="{{ path('circus_act_show', {'id': circus_act.id}) }}">
+									<div>
+										<i class="fas fa-eye fa-lg"></i>
+									</div>
+								</a>
+								{% if is_granted('ROLE_ADMIN') %}
+									<a href="{{ path('circus_act_edit', {'id': circus_act.id}) }}">
+										<div class="ml-3">
+											<i class="fas fa-pen fa-lg"></i>
+										</div>
+									</a>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			{% else %}
+				<div>
+					no records found
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock %}
