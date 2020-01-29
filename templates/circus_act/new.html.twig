@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CircusAct{% endblock %}
+
+{% block body %}
+    <h1>Create new CircusAct</h1>
+
+    {{ include('circus_act/_form.html.twig') }}
+
+    <a href="{{ path('circus_act_index') }}">back to list</a>
+{% endblock %}
